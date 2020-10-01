@@ -63,7 +63,7 @@ mongoose.connect(
 );
 
 //the start of the app xD
-app.listen(3001, () => {
+app.listen(process.env.PORT, () => {
     console.log("HTTP SERVER UP")
 });
 
