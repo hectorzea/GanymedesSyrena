@@ -51,7 +51,7 @@ app.use( (err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error');
 });
-
+console.log(process.env);
 //connection to mongoose
 mongoose.connect(
     process.env.DATABASEURL,
