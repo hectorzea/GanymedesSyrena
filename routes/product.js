@@ -42,10 +42,9 @@ router.post('/saveProducts', (req, res, next) => {
     let query = body.query;
     let searchOrder = body.searchOrder;
     puppeteer.launch({
-        headless: true,
-        args:[
+        'args' : [
             '--no-sandbox',
-            '--disable-setuid-sandbox',
+            '--disable-setuid-sandbox'
         ]
     })
         .then(async browser => {
