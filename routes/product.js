@@ -43,6 +43,10 @@ router.post('/saveProducts', (req, res, next) => {
     let searchOrder = body.searchOrder;
     puppeteer.launch({
         headless: true,
+        args:[
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+        ]
     })
         .then(async browser => {
             const page = await browser.newPage();
@@ -84,7 +88,7 @@ router.post('/saveProducts', (req, res, next) => {
         })
         .catch((error) => {
             changeOrderStatus(searchOrder, "failed").then((data) => {
-                res.json({dataDB: data});
+                res.json({dataDB: data, errorCause:error});
             }).catch((e) => {
                 res.json({ok: false, msg: "error changin status"});
             });
