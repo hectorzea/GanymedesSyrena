@@ -3,6 +3,7 @@ require("./config/config");
 const createError = require('http-errors');
 const express = require('express');
 const mongoose = require("mongoose");
+mongoose.set('useFindAndModify', false);
 const bodyParser = require("body-parser");
 const cors = require('cors');
 const app = express();
@@ -51,7 +52,7 @@ app.use( (err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error');
 });
-console.log(process.env);
+
 //connection to mongoose
 mongoose.connect(
     process.env.DATABASEURL,
