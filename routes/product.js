@@ -130,8 +130,20 @@ router.post('/search', (req, res, next) => {
     });
 });
 
+router.get('/search-order/:query_string',  (req, res, next)  => {
+    let sQueryString = req.params.query_string;
+    SearchOrder.find({_id:sQueryString})
+        .exec((err, SOs) => {
+            if (err) return res.status(500).json({ ok: false, err });
+            res.json({
+                ok: true,
+                SOs
+            });
+        });
+});
+
 /* GET users listing. */
-router.post('/search-orders', function (req, res, next) {
+router.post('/search-orders',  (req, res, next) => {
     let body = req.body;
     let oFindCriteria = {
         user: body.userId
