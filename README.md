@@ -13,7 +13,7 @@ https://vigorous-brattain-e03c97.netlify.app/ (THEMISTO)
 
 ## GANYMEDES
 
-https://vigorous-brattain-e03c97.netlify.app/ (GANYMEDES)
+https://ganymedes-hzea.herokuapp.com/
 
 ## SERVICIOS DOCUMENTADOS
 
